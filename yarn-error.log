@@ -1,0 +1,37 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\Naveed\OneDrive\Desktop\FileSharingWeb\Backend_Of_FileSharingWeb\.yarn\releases\yarn-1.22.19.cjs add express@4.17.1
+
+PATH: 
+  C:\Program Files\WindowsApps\Microsoft.PowerShell_7.2.6.0_x64__8wekyb3d8bbwe;C:\Program Files\Python310\Scripts\;C:\Program Files\Python310\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Java\jdk-18.0.1.1\bin;C:\Program Files\Git\cmd;C:\Program Files\GitHub CLI\;C:\Program Files\Cloudflare\Cloudflare WARP\;C:\Program Files\nodejs\;C:\Users\Naveed\scoop\apps\gcc\current\bin;C:\Users\Naveed\scoop\shims;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Naveed\AppData\Local\Microsoft\WindowsApps;C:\Users\Naveed\AppData\Local\Programs\Microsoft VS Code\bin;C:\MinGW\bin;C:\Users\Naveed\AppData\Local\Programs\oh-my-posh\bin;C:\Users\Naveed\AppData\Roaming\npm;C:\Users\Naveed\AppData\Local\Programs\Python\Python39;C:\Users\Naveed\AppData\Local\Programs\Python\Python39\Scripts;C:\Users\Naveed\Anaconda3\Scripts;C:\Users\Naveed\Anaconda3;C:\ProgramData\Anaconda3\Scripts;C:\ProgramData\Anaconda3\Library\bin;
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.17.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  SyntaxError: C:\Users\Naveed\OneDrive\Desktop\FileSharingWeb\Backend_Of_FileSharingWeb\package.json: Unexpected token y in JSON at position 106
+      at JSON.parse (<anonymous>)
+      at C:\Users\Naveed\OneDrive\Desktop\FileSharingWeb\Backend_Of_FileSharingWeb\.yarn\releases\yarn-1.22.19.cjs:1104:57
+      at Generator.next (<anonymous>)
+      at step (C:\Users\Naveed\OneDrive\Desktop\FileSharingWeb\Backend_Of_FileSharingWeb\.yarn\releases\yarn-1.22.19.cjs:310:30)
+      at C:\Users\Naveed\OneDrive\Desktop\FileSharingWeb\Backend_Of_FileSharingWeb\.yarn\releases\yarn-1.22.19.cjs:321:13
+
+npm manifest: 
+  {
+    "name": "Backend_Of_FileSharingWeb",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT"
+  }
+  y
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
