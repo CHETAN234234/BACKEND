@@ -11,11 +11,11 @@ app.use(express.static('public'));
 app.use(express.json());
 
 //cors
-const corsOptions = {
-    origin  : process.env.ALLOWED_CLIENTS.split(',')
+// const corsOptions = {
+//     origin  : process.env.ALLOWED_CLIENTS.split(',')
     
-}
-app.use(cors(corsOptions));
+// }
+// app.use(cors(corsOptions));
 //Route
 app.use('/api/files', require('./routes/files'));
 app.use('/files', require('./routes/show'));

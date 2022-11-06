@@ -13,13 +13,13 @@
     });
 
     let info  = await transporter.sendMail({
-        from : `inShare<${from}>`,
-        To  ,
-        subject, 
-        text  ,        
-        html  ,
-    });
-    console.log(info);
+                    from : `inShare<${from}>`,
+                     to,
+                     subject, 
+                    text,        
+                    html  
+                });
+              console.log(info);      
 }       
 
 module.exports = sendMail;

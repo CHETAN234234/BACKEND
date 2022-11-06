@@ -1,4 +1,4 @@
-    const router  = require('express').Router();
+const router  = require('express').Router();
 const multer = require('multer');
 const path = require('path');
 const File = require('../models/file');
@@ -14,7 +14,7 @@ let storage = multer.diskStorage({
 
 let upload = multer({
     storage,
-    limits : {fileSize : 1000000 * 100}
+    limits : {fileSize : 1000000 * 1000}
 }).single('myfile');
 
 router.post('/', (req, res) =>{
@@ -22,7 +22,7 @@ router.post('/', (req, res) =>{
     // Store file
     upload(req, res, async (err) => {
         if(!req.file){
-            return res.json({error : 'All fields are required.'});
+            return res.json({error : ' this could be send, If you could deployment.'});
         }
             if(err){
                 return res.status(500).send({error : err.message})
@@ -42,20 +42,20 @@ router.post('/', (req, res) =>{
 
 
 router.post('/send',  async (req, res) =>{
-        // console.log(req.body);
-        // return res.send({}) ;
-    const{ uuid, emailTo, emailFrom} = req.body;
+    const{ uuid, emailTo, emailFrom } = req.body;
 
     
     //
     if( !uuid || !emailTo || !emailFrom ){
-        return res.status(422).send({error : 'ALL fields are required.'});
+        return res.status(422).send({error : 'All field ard.'});
     }
     // Get data from database
-    const file = await  File.findOne({ uuid : uuid});
-    if(file.sender){
-        return res.status(422).send({error : 'Email already sent.'});
-    }
+    const file = await File.findOne({ uuid : uuid});   
+
+    console.log("here ", file);
+    // if(file.sender){
+    //     return res.status(422).send({error : 'Email already sent.'});
+    // }
 
     file.sender = emailFrom;
     file.receiver = emailTo;
@@ -63,7 +63,8 @@ router.post('/send',  async (req, res) =>{
 
     // send email
     const sendMail = require('../services/emailService');
-    sendMail({
+
+    await sendMail({
         from : emailFrom,
         to : emailTo,
         subject : 'inshaare file sharing',
@@ -71,7 +72,7 @@ router.post('/send',  async (req, res) =>{
         html : require('../services/emailTemplate')({
             emailFrom : emailFrom,
             downloadLink : `${process.env.APP_BASE_URL}/files/${file.uuid}`,
-            size : parseInt(file.size/1000) + 'KB',
+            size : parseInt(file.size/1000) + 'kB',
             expires : '24 hours'
         })
 
